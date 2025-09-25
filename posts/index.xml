@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on</title><link>/posts/</link><description>Recent content in Posts on</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>开源手表 Sensor Watch 介绍</title><link>/posts/first_post/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><guid>/posts/first_post/</guid><description>&lt;p>&lt;img src="/sensor_watch.assets/image-20250922223952649.png" alt="image-20250922223952649">&lt;/p>
+&lt;p>&lt;a href="https://github.com/joeycastillo/Sensor-Watch">项目地址&lt;/a>&lt;/p>
+&lt;h2 id="基础说明">基础说明&lt;/h2>
+&lt;p>固件名称为&lt;code>second Movement&lt;/code>， 取代了旧版的&lt;code>Movement&lt;/code> 但是工作方式和之前大致相同&lt;/p>
+&lt;p>先介绍一下表盘的概念，在 &lt;code>second Movent&lt;/code> 中表盘是一个完全封装的功能块，可供您交互。该框架将所有表盘分为两个表盘列表，主列表和副列表。主列表主要是日常经常用的一些表盘，如时间，秒表，定时器。而辅助列表是一些偶尔用的比如设置，电池电压，温度。&lt;/p>
+&lt;p>下面介绍一下三个可用的按钮&lt;/p>
+&lt;h3 id="模式按钮mode">模式按钮（MODE）&lt;/h3>
+&lt;p>短按模式按钮，可以立即从当前表盘切换到列表的下一个表盘，知道列表末尾并且循环。&lt;/p>
+&lt;p>&lt;img src="https://www.sensorwatch.net/docs/using/images/mode-press-behavior.png" alt="img">&lt;/p>
+&lt;p>演示如下：&lt;/p>
+&lt;p>&lt;img src="/sensor_watch.assets/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%83%8F_20250922_225121.webp" alt="屏幕录像_20250922_225121">&lt;/p>
+&lt;p>方便起见一般都将时钟放在第一个表盘作为主表盘。&lt;/p>
+&lt;p>&lt;strong>如果不在主表盘&lt;/strong>，可以&lt;strong>长按进入主表盘&lt;/strong>，类似于返回桌面，演示如下：&lt;/p>
+&lt;p>&lt;img src="/sensor_watch.assets/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%83%8F_20250922_225603.webp" alt="屏幕录像_20250922_225603">&lt;/p>
+&lt;p>&lt;strong>当您在主表盘&lt;/strong>，可以&lt;strong>长按进入副表盘&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="/sensor_watch.assets/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%83%8F_20250922_225904.webp" alt="屏幕录像_20250922_225904">&lt;/p>
+&lt;h3 id="alarm-闹钟键">ALARM 闹钟键&lt;/h3>
+&lt;p>闹钟键的位置在屏幕右下角&lt;/p>
+&lt;p>闹钟键是一个通用的按键，一般来说，闹钟键有以下几个作用&lt;/p>
+&lt;h4 id="短按">短按&lt;/h4>
+&lt;p>在秒表界面上，闹钟按钮可以启动或停止秒表。在倒计时界面上，闹钟按钮可以启动或停止倒计时。&lt;/p>
+&lt;p>还可以用来设置数值 例如：短按闹铃按钮也可以增加一个数值：在&lt;a href="https://www.sensorwatch.net/docs/using/timeset/">时间设置&lt;/a>表盘中，设置月份时按下闹铃按钮，月份会前进一个。再次按下闹铃按钮，月份会再次前进，直到到达最终值（12 月），如此循环。&lt;/p>
+&lt;p>举一个例子：在计时器ST表盘下开始/暂停计时&lt;/p>
+&lt;h4 id="长按">长按&lt;/h4>
+&lt;p>对于带有可配置选项的表盘，长按闹钟按钮可以直接更改这些选项，也可以进入配置表盘的辅助模式。例如，在&lt;a href="https://www.sensorwatch.net/docs/using/clock/">时钟&lt;/a>表盘上，长按闹钟按钮可切换整点报时；在&lt;a href="https://www.sensorwatch.net/docs/using/temperature/">温度&lt;/a>表盘上，长按闹钟按钮可切换公制或英制单位（摄氏度或华氏度）。在&lt;a href="https://www.sensorwatch.net/docs/using/sunrise/">日出/日落&lt;/a>表盘上，长按闹钟按钮可进入经纬度设置屏幕；在&lt;a href="https://www.sensorwatch.net/docs/using/worldclock/">世界时钟表盘&lt;/a>上，长按闹钟按钮可添加名称并配置时区&lt;/p>
+&lt;h3 id="light-灯光按键">LIGHT 灯光按键&lt;/h3>
+&lt;p>灯光按键的位置在左上角&lt;/p>
+&lt;p>在大多数表盘上，按下 LIGHT 按钮即可点亮 LED 背光。按住 LIGHT 按钮通常会导致 LED 背光持续亮起。不过，此行为偶尔会被覆盖，尤其是在 LIGHT 按钮用于其他功能时。&lt;/p>
+&lt;p>当需要更复杂的交互时，LIGHT 可能发挥更重要的作用，特别是，有些表盘有不同的字段需要设置的时候例如：设置时间时，我们需要一个按钮来切换设置的时间部分，小时，分钟，秒。短按LIGHT按钮可以切换这些字段，达到末尾时会返回。&lt;/p>
+&lt;p>这些表盘上，您可以将LIGHT按钮视为“选项卡”的切换按钮，将ALARM按钮视为输入按钮，用于更改该选项的值。&lt;/p>
+&lt;p>演示如下：修改年月日，&lt;/p>
+&lt;p>&lt;img src="/sensor_watch.assets/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%83%8F_20250923_100702.webp" alt="屏幕录像_20250923_100702">&lt;/p>
+&lt;h2 id="表盘文档">表盘文档&lt;/h2>
+&lt;h3 id="clock-时钟">clock 时钟&lt;/h3>
+&lt;p>钟面与原版 F-91W 的经典时间和日期显示方式相呼应。顶部显示星期和月份，底部显示当前时间。按下“灯光”按钮可点亮 LED，方便您在黑暗环境中读取显示屏。按住“灯光”按钮可使 LED 保持常亮，您可以通过按住闹钟按钮来切换整点报时功能。按住几秒钟后，信号指示灯将亮起，表示整点报时功能已启用。&lt;em>钟面还包含低电量警告：当检测到电池电压低时，表盘将显示 LAP 指示灯。这并不意味着即将断电，而是意味着您的电池剩余电量仅剩原始容量的 5% 左右，您应该考虑更换电池。电池为 CR2016 纽扣电池&lt;/em>。&lt;/p>
+&lt;p>一般将clock表盘作为主表盘，&lt;/p>
+&lt;p>&lt;img src="/sensor_watch.assets/image-20250923102128177.png" alt="image-20250923102128177">&lt;/p></description></item></channel></rss>
