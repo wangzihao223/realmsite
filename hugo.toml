@@ -1,8 +1,8 @@
 theme = "nostyleplease"
 
-# baseURL = "https://wangzihao223.github.io/realmsite/"
-# relativeURLs = true
-# canonifyURLs = true
+baseURL = "https://wangzihao223.github.io/realmsite/"
+relativeURLs = true
+canonifyURLs = true
 
 [taxonomies]
   category = "categories"
