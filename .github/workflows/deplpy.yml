@@ -15,15 +15,13 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.150.0'
       - name: Build
         run: hugo --minify
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./public
-          # 或者如果你输出到 docs/，就改成 ./docs
           publish_branch: gh-pages
-          # 保留 CNAME, etc
-          user_name: '你的用户名'
-          user_email: '你的邮箱@example.com'
+          user_name: 'wangzihao223'
+          user_email: '1600964393@qq.com'
