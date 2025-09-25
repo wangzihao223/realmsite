@@ -1,0 +1,29 @@
+name: Deploy Hugo site to GH Pages
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+      - name: Build
+        run: hugo --minify
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./public
+          # 或者如果你输出到 docs/，就改成 ./docs
+          publish_branch: gh-pages
+          # 保留 CNAME, etc
+          user_name: '你的用户名'
+          user_email: '你的邮箱@example.com'
